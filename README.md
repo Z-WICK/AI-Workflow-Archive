@@ -29,8 +29,14 @@ A comprehensive AI skill that acts as a Google full-stack engineer, adapting rol
 # Install the skill
 cp -r skills/google-dev-methodology ~/.factory/skills/
 
+# Install the slash command (optional, for easier invocation)
+cp commands/google-dev.md ~/.factory/commands/
+
 # Use with slash command
 /google-dev [task description]
+
+# Or invoke directly
+Use the skill: google-dev-methodology
 ```
 
 **Example Usage:**
@@ -44,6 +50,15 @@ cp -r skills/google-dev-methodology ~/.factory/skills/
 # Full-stack task
 /google-dev Build user points system (backend + frontend + database)
 ```
+
+**Slash Command:**
+
+The included slash command (`commands/google-dev.md`) provides:
+- Quick invocation with `/google-dev [task]`
+- Automatic skill binding
+- Chinese language support
+- Comprehensive usage examples
+- All 6 role examples (Backend, Frontend, Database, QA, DevOps, Full-Stack)
 
 ## 🎯 Philosophy
 

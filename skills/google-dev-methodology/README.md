@@ -23,16 +23,41 @@ This skill enables you to work like a Google engineer across all layers of the s
 
 ## Installation
 
-This skill is already installed in your Factory skills directory:
+### Install the Skill
+
+```bash
+# Copy skill to Factory skills directory
+cp -r google-dev-methodology ~/.factory/skills/
 ```
-~/.factory/skills/google-dev-methodology/
+
+### Install the Slash Command (Optional)
+
+For easier invocation, install the slash command:
+
+```bash
+# Copy slash command to Factory commands directory
+cp ../../commands/google-dev.md ~/.factory/commands/
 ```
+
+The slash command (`google-dev.md`) provides:
+- Quick invocation: `/google-dev [task]`
+- Automatic skill binding
+- Chinese language support
+- Comprehensive usage examples for all 6 roles
 
 ## Usage
 
-### Via Slash Command
+### Method 1: Using Slash Command (Recommended)
+
 ```bash
 /google-dev [task description]
+```
+
+### Method 2: Direct Skill Invocation
+
+```
+Use the skill: google-dev-methodology
+[task description]
 ```
 
 ### Examples

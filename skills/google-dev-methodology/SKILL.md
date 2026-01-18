@@ -60,6 +60,30 @@ Options:
 - Use full paths: `/path/to/project` not relative paths
 - Remember: User will tell you the working directory - listen for it!
 
+**CRITICAL: Remote File Operations**
+
+When working on remote servers, **NEVER use CREATE/Edit tools directly**. Instead:
+
+```bash
+# ✅ Correct: Use SSH commands to create/edit files
+ssh root@SERVER "cat > /path/to/file.txt << 'EOF'
+file content here
+EOF"
+
+# ❌ Wrong: Direct CREATE on remote path
+CREATE /path/to/remote/file.txt  # This will fail!
+```
+
+**Remote operation workflow:**
+1. Confirm remote server and directory
+2. Use SSH for ALL file operations:
+   - Create files: `ssh root@SERVER "cat > /path/file << 'EOF' ... EOF"`
+   - Edit files: `ssh root@SERVER "sed -i 's/old/new/' /path/file"`
+   - Read files: `ssh root@SERVER "cat /path/file"`
+   - Execute commands: `ssh root@SERVER "cd /path && command"`
+3. Always use absolute paths on remote server
+4. Test commands before executing
+
 ## The Iron Law
 
 ```
@@ -508,6 +532,7 @@ Pipeline time: 3m 45s
 ## Red Flags (Universal)
 
 - **❌ SKIPPING WORKING DIRECTORY VERIFICATION** ⚠️ (MOST CRITICAL)
+- **❌ USING CREATE/Edit TOOLS ON REMOTE SERVERS** ⚠️ (CRITICAL)
 - Skipping documentation
 - Changing too much at once
 - Not writing tests
@@ -525,6 +550,7 @@ Pipeline time: 3m 45s
 |--------|---------|------------|
 | **"I know which directory I'm in"** | **Wrong directory = wrong codebase destroyed** | **All (CRITICAL)** |
 | **"It's obvious from context"** | **Remote/local confusion is common** | **All (CRITICAL)** |
+| **"CREATE works on remote paths"** | **CREATE only works locally, use SSH commands** | **Remote Dev (CRITICAL)** |
 | "Frontend doesn't need tests" | Frontend bugs are expensive | Frontend |
 | "Just hardcode this value" | Hardcoding = maintenance nightmare | All |
 | "Skip migration script" | Data corruption risk | Database |

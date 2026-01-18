@@ -36,7 +36,7 @@ For easier invocation, install the slash command:
 
 ```bash
 # Copy slash command to Factory commands directory
-cp ../../commands/google-dev.md ~/.factory/commands/
+cp ../../commands/google-dev-methodology/google-dev.md ~/.factory/commands/
 ```
 
 The slash command (`google-dev.md`) provides:

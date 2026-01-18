@@ -1,40 +1,33 @@
 # Slash Commands
 
-This directory contains slash commands for quick invocation of skills.
+This directory contains slash commands for quick invocation of skills, organized by category.
+
+## Directory Structure
+
+```
+commands/
+├── README.md                           # This file
+├── google-dev-methodology/             # Commands for Google Dev Methodology
+│   └── google-dev.md
+└── [other-skill-name]/                 # Commands for other skills
+    └── command.md
+```
 
 ## Available Commands
 
-### google-dev.md
+### google-dev-methodology/
 
-Slash command for the Google Development Methodology skill.
+Commands for the Google Development Methodology skill.
 
 **Installation:**
 ```bash
-cp google-dev.md ~/.factory/commands/
+cp google-dev-methodology/google-dev.md ~/.factory/commands/
 ```
 
-**Usage:**
-```bash
-/google-dev [task description]
-```
+**Available commands:**
+- `google-dev.md` - Main command for invoking the skill
 
-**Features:**
-- Automatic skill binding to `google-dev-methodology`
-- Chinese language support
-- Comprehensive usage examples
-- All 6 role examples (Backend, Frontend, Database, QA, DevOps, Full-Stack)
-
-**Examples:**
-```bash
-# Backend task
-/google-dev 重构 OrderService，拆分成多个服务
-
-# Frontend task
-/google-dev 构建用户仪表盘组件，支持响应式布局
-
-# Full-stack task
-/google-dev 开发用户积分系统（后端 + 前端 + 数据库）
-```
+See [google-dev-methodology/](./google-dev-methodology/) for details.
 
 ## What is a Slash Command?
 
@@ -70,6 +63,15 @@ Command content and examples...
 - `argument-hint` - Hint for arguments
 - `binding` - Skill to invoke (format: `skill:skill-name`)
 - `$ARGUMENTS` - Placeholder for user-provided arguments
+
+## Adding New Commands
+
+To add commands for a new skill:
+
+1. Create a subdirectory: `commands/your-skill-name/`
+2. Add your command files: `your-skill-name/command.md`
+3. Update this README with installation instructions
+4. Commit and push
 
 ## Related
 

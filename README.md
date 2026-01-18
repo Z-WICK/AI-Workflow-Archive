@@ -30,7 +30,7 @@ A comprehensive AI skill that acts as a Google full-stack engineer, adapting rol
 cp -r skills/google-dev-methodology ~/.factory/skills/
 
 # Install the slash command (optional, for easier invocation)
-cp commands/google-dev.md ~/.factory/commands/
+cp commands/google-dev-methodology/google-dev.md ~/.factory/commands/
 
 # Use with slash command
 /google-dev [task description]
